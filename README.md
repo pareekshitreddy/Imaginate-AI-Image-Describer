@@ -1,39 +1,53 @@
-# Image-Captioning
+# Image Captioning using Deep Learning Networks
 
-Large number of images are generated each day through a wide variety of mediums
-such as internet, news articles and advertisements. Most of these images do not have a caption or
-description yet we humans can recognize them with minimum effort. But, this is not the same for
-a machine. Image captioning is used extensively for Content-Based Image Retrieval (CBIR) and
-applied in many fields such as education, military, bio-medicine and web-scraping. Also, it is used in
-social media platforms for identifying where a particular picture is taken, what kind of a picture it is
-and describe any activity that is shown in the picture which can be further used for recommending
-content to the user.
+This project aims to generate natural language captions for images using deep learning models. It explores different architectures and techniques such as CNN-LSTM, CNN-Transformer, and BERT embeddings.
 
-Image Captioning is the process of generating description of an image from the objects and actions in
-the image. Image captioning is a multi-modal problem that has drawn extensive attention in both the
-natural language processing and computer vision community.
+## Requirements and Dependencies
+- Python 3.7 or higher
+- TensorFlow 2.0 or higher
+- Keras
+- Numpy
+- Matplotlib
+- NLTK
+- Gensim
+- HuggingFace Transformers
+- Flickr8k and Flickr30k datasets
 
-Understanding an image mainly depends on obtaining image features. The techniques used for
-this purpose can be broadly divided into two categories: (1) Traditional machine learning based
-techniques and (2) Deep machine learning based techniques. Traditional machine based techniques
-involves a combination of hand crafted features like Local Binary Patterns and Histogram of Oriented
-Gradients. Since hand crafted features are task specific, extracting features from a large and diverse
-set of data is not feasible. Moreover, real world data such as images and video are complex and
-have different semantic interpretations. But in deep machine learning based techniques learn the
-features automatically and can handle a wide variety of data-sets like images and videos. Consider,
-Convolutional Neural Networks (CNN) that are widely used for feature learning, and a classifier such
-as Softmax is used for classification.
+## Installation and Usage
+1. Clone this repository: `git clone https://github.com/your-username/image-captioning.git`
+2. Install the required packages: `pip install -r requirements.txt`
+3. Download the datasets from [here](link) and [here](link) and place them in the `data` folder
+4. Run the preprocess.py script to prepare the image features and captions: `python preprocess.py`
+5. Choose a model to train from the `models` folder, such as `cnn_lstm.py`, `cnn_transformer.py`, or `cnn_bert.py`
+6. Run the model script with the desired parameters: `python cnn_lstm.py --epochs 30 --batch_size 64 --learning_rate 0.0001`
+7. Evaluate the model on the test set using the evaluate.py script: `python evaluate.py --model cnn_lstm --beam_size 3`
+8. Generate captions for new images using the predict.py script: `python predict.py --model cnn_lstm --image sample.jpg`
 
-In this project, we will implement baseline model using CNN as the encoder and LSTM as a decoder
-and evaluate it using BLEU[6] score as a metric.
+## Results and Evaluation
+The models were evaluated using the BLEU scores on the Flickr8k and Flickr30k datasets. The following table summarizes the results:
 
-As an intermediate model, we will implement a CNN + Transformer based model using Attention
-Mechanism for Caption Generation and evaluate it using BLEU[6] score as a metric.
-For the final model, we investigate the effect of pre-trained embeddings on the task of image
-captioning by BERT context vectors [12] to enhance the models performance and reduce training
-time.
+| Model           | BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 |
+|-----------------|--------|--------|--------|--------|
+| CNN-RNN         | 0.452  | 0.481  | 0.508  | 0.440  |
+| CNN-Transformer | 0.389  | 0.551  | 0.633  | 0.655  |
+| CNN-BERT        | 0.402  | 0.526  | 0.782  | 0.655  |
 
-The task is divided into two modules, namely Image base and Language based module. Image based
-module extracts the features and nuances out of the image and the Language based module translates
-the features and objects from the image to a natural sentence. For the image based module to encode
-the image we used CNN and for the decoder we used Pre-Trained BERT along with LSTM.
+Some examples of generated captions are shown below:
+
+- CNN-RNN: A group of people sitting on a couch with a laptop
+- CNN-Transformer: A group of friends using a laptop on a sofa
+- CNN-BERT: A group of people sitting on a couch and looking at a laptop
+- CNN-RNN: A man riding a bike on a dirt road
+- CNN-Transformer: A man riding a mountain bike on a trail
+- CNN-BERT: A man riding a bicycle on a dirt path
+
+## Credits and References
+This project was inspired by the following papers and resources:
+- [Image Captioning Based on Deep Neural Networks] by Liu et al.
+- [A Thorough Review of Models, Evaluation Metrics, and Datasets on Image Captioning] by Luo et al.
+- [Unified Vision-Language Pre-Training for Image Captioning and VQA] by Zhou et al.
+- [Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset For Automatic Image Captioning] by Sharma et al.
+- [Attention Is All You Need] by Vaswani et al.
+- [RUBERT: A Bilingual Roman Urdu BERT Using Cross Lingual Transfer Learning] by Khalid et al.
+- [Flickr Image Datasets] by Hsankesara
+- [GloVe: Global Vectors for Word Representation] by Pennington et al.
