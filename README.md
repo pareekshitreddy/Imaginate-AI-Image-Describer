@@ -15,13 +15,9 @@ This project aims to generate natural language captions for images using deep le
 
 ## Installation and Usage
 1. Clone this repository: `git clone https://github.com/your-username/image-captioning.git`
-2. Install the required packages: `pip install -r requirements.txt`
-3. Download the datasets from [here](link) and [here](link) and place them in the `data` folder
-4. Run the preprocess.py script to prepare the image features and captions: `python preprocess.py`
-5. Choose a model to train from the `models` folder, such as `cnn_lstm.py`, `cnn_transformer.py`, or `cnn_bert.py`
-6. Run the model script with the desired parameters: `python cnn_lstm.py --epochs 30 --batch_size 64 --learning_rate 0.0001`
-7. Evaluate the model on the test set using the evaluate.py script: `python evaluate.py --model cnn_lstm --beam_size 3`
-8. Generate captions for new images using the predict.py script: `python predict.py --model cnn_lstm --image sample.jpg`
+2. Install the required packages
+3. Download the datasets from [here]([link](https://www.kaggle.com/datasets/adityajn105/flickr8k)) and [here]([link](https://www.kaggle.com/datasets/adityajn105/flickr30k)) and place them in the `data` folder
+
 
 ## Results and Evaluation
 The models were evaluated using the BLEU scores on the Flickr8k and Flickr30k datasets. The following table summarizes the results:
