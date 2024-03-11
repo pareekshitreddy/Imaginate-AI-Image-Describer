@@ -16,7 +16,7 @@ This project aims to generate natural language captions for images using deep le
 ## Installation and Usage
 1. Clone this repository: `git clone https://github.com/your-username/image-captioning.git`
 2. Install the required packages
-3. Download the datasets from [here]([link](https://www.kaggle.com/datasets/adityajn105/flickr8k)) and [here]([link](https://www.kaggle.com/datasets/adityajn105/flickr30k)) and place them in the `data` folder
+3. Download the datasets from [here](https://www.kaggle.com/datasets/adityajn105/flickr8k) and [here](https://www.kaggle.com/datasets/adityajn105/flickr30k) and place them in the `data` folder
 
 
 ## Results and Evaluation
