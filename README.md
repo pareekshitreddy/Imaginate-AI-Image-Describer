@@ -1,4 +1,4 @@
-# Image Captioning using Deep Learning Networks
+# Imaginate: AI Image Describer
 
 This project aims to generate natural language captions for images using deep learning models. It explores different architectures and techniques such as CNN-LSTM, CNN-Transformer, and BERT embeddings.
 
